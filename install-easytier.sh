@@ -17,7 +17,7 @@ DEFAULT_NETWORK_SECRET="123"
 LOG_FILE="${INSTALL_DIR}/${SERVICE_NAME}.log"
 MANAGER_SCRIPT="${INSTALL_DIR}/${SERVICE_NAME}-manager.sh"
 GLOBAL_CMD="/usr/local/bin/et"
-DOWNLOAD_URL="https://gitee.com/zyhhtu/easytier/releases/download/easytier-script/easytier-core"
+DOWNLOAD_URL="https://raw.githubusercontent.com/benben-cc/easytier-install/refs/heads/main/easytier-core"
 
 LIGHT_BLUE="\033[94m"
 BLUE="\033[34m"

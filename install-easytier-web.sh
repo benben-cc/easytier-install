@@ -18,8 +18,8 @@ LOG_FILE="${INSTALL_DIR}/${SERVICE_NAME}.log"
 MANAGER_SCRIPT="${INSTALL_DIR}/${SERVICE_NAME}-manager.sh"
 GLOBAL_CMD="/usr/bin/et"
 
-DOWNLOAD_URL="https://gitee.com/zyhhtu/easytier/releases/download/easytier-script/easytier-core"
-WEB_DOWNLOAD_URL="https://gitee.com/zyhhtu/easytier/releases/download/easytier-script/easytier-web-embed"
+DOWNLOAD_URL="https://raw.githubusercontent.com/benben-cc/easytier-install/refs/heads/main/easytier-core"
+WEB_DOWNLOAD_URL="https://raw.githubusercontent.com/benben-cc/easytier-install/refs/heads/main/easytier-web-embed"
 
 LIGHT_BLUE="\033[94m"
 BLUE="\033[34m"

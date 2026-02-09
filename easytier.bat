@@ -3,13 +3,13 @@ setlocal enabledelayedexpansion
 
 net session >nul 2>&1
 if %errorLevel% neq 0 (
-    echo ÕýÔÚÒÔ¹ÜÀíÔ±È¨ÏÞÖØÐÂÔËÐÐ...
+    echo ï¿½ï¿½ï¿½ï¿½ï¿½Ô¹ï¿½ï¿½ï¿½Ô±È¨ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½...
     powershell -Command "Start-Process '%~f0' -Verb RunAs"
     exit /b
 )
 
 set "INSTALL_DIR=C:\EasyTier"
-set "EASYTIER_ZIP_URL=https://gitee.com/zyhhtu/easytier/releases/download/easytier-script/easytier.zip"
+set "EASYTIER_ZIP_URL=https://raw.githubusercontent.com/benben-cc/easytier-install/refs/heads/main/easytier.zip"
 set "TEMP_DIR=%TEMP%\EasyTier_Temp"
 set "ZIP_FILE=%TEMP_DIR%\easytier.zip"
 set "NSSM_EXE=%INSTALL_DIR%\nssm.exe"
@@ -40,47 +40,47 @@ if "%EASYTIER_INSTALLED%"=="0" (
     goto MainMenu
 )
 
-::================ °²×°²Ëµ¥ =================
+::================ ï¿½ï¿½×°ï¿½Ëµï¿½ =================
 :InstallMenu
 cls
 echo ===========================================
-echo         EasyTier Î´°²×° --- ÕÅÑÇºÀ
+echo         EasyTier Î´ï¿½ï¿½×° --- ï¿½ï¿½ï¿½Çºï¿½
 echo ===========================================
-echo °²×°Ä¿Â¼£º%INSTALL_DIR%
+echo ï¿½ï¿½×°Ä¿Â¼ï¿½ï¿½%INSTALL_DIR%
 echo ===========================================
-echo 1. °²×° EasyTier
-echo 2. ÍË³ö
+echo 1. ï¿½ï¿½×° EasyTier
+echo 2. ï¿½Ë³ï¿½
 echo ===========================================
-set /p choice=ÇëÑ¡Ôñ²Ù×÷£¨±àºÅ£©£º
+set /p choice=ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å£ï¿½ï¿½ï¿½
 if "%choice%"=="1" call :DownloadAndExtract
 if "%choice%"=="2" exit
 goto InstallMenu
 
-::================ Ö÷²Ëµ¥ =================
+::================ ï¿½ï¿½ï¿½Ëµï¿½ =================
 :MainMenu
 cls
 echo ===========================================
-echo         EasyTier ¹ÜÀíÃæ°å --- ÕÅÑÇºÀ
+echo         EasyTier ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ --- ï¿½ï¿½ï¿½Çºï¿½
 echo ===========================================
-echo °²×°Ä¿Â¼£º%INSTALL_DIR%
+echo ï¿½ï¿½×°Ä¿Â¼ï¿½ï¿½%INSTALL_DIR%
 echo ===========================================
-echo 1. °²×° ÏµÍ³·þÎñ
-echo 2. É¾³ý ÏµÍ³·þÎñ
-echo 3. ´ò¿ª ÈÕÖ¾Ä¿Â¼
-echo 4. Ð¶ÔØ EasyTier
+echo 1. ï¿½ï¿½×° ÏµÍ³ï¿½ï¿½ï¿½ï¿½
+echo 2. É¾ï¿½ï¿½ ÏµÍ³ï¿½ï¿½ï¿½ï¿½
+echo 3. ï¿½ï¿½ ï¿½ï¿½Ö¾Ä¿Â¼
+echo 4. Ð¶ï¿½ï¿½ EasyTier
 echo ===========================================
 call :UpdateServiceStatus
 
 set "RUNNING_COUNT=0"
 for /l %%i in (1,1,4) do (
-    if "!PROG%%i_STATUS!"=="ÔËÐÐÖÐ" (
-        echo !PROG%%i_EXE!  ×´Ì¬£ºÔËÐÐÖÐ
+    if "!PROG%%i_STATUS!"=="ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½" (
+        echo !PROG%%i_EXE!  ×´Ì¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         set /a RUNNING_COUNT+=1
     )
 )
-if !RUNNING_COUNT! equ 0 echo µ±Ç°Ã»ÓÐÔËÐÐÖÐµÄ·þÎñ
+if !RUNNING_COUNT! equ 0 echo ï¿½ï¿½Ç°Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ÐµÄ·ï¿½ï¿½ï¿½
 echo ===========================================
-set /p choice=ÇëÑ¡Ôñ²Ù×÷£¨±àºÅ£©£º
+set /p choice=ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å£ï¿½ï¿½ï¿½
 
 if "%choice%"=="1" call :StartSubMenu
 if "%choice%"=="2" call :StopSubMenu
@@ -88,19 +88,19 @@ if "%choice%"=="3" goto OpenLogDir
 if "%choice%"=="4" call :UninstallEasyTier
 goto MainMenu
 
-::================ ×Ó³ÌÐò =================
+::================ ï¿½Ó³ï¿½ï¿½ï¿½ =================
 :UpdateServiceStatus
 for /l %%i in (1,1,4) do (
     set "SERVICE_NAME=!PROG%%i_SERVICE!"
     sc query "!SERVICE_NAME!" >nul 2>&1
     if errorlevel 1 (
-        set "PROG%%i_STATUS=Î´×¢²á"
+        set "PROG%%i_STATUS=Î´×¢ï¿½ï¿½"
     ) else (
         for /f "tokens=3 delims=: " %%S in ('sc query "!SERVICE_NAME!" ^| findstr "STATE"') do (
             if "%%S"=="RUNNING" (
-                set "PROG%%i_STATUS=ÔËÐÐÖÐ"
+                set "PROG%%i_STATUS=ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½"
             ) else (
-                set "PROG%%i_STATUS=ÒÑ×¢²á"
+                set "PROG%%i_STATUS=ï¿½ï¿½×¢ï¿½ï¿½"
             )
         )
     )
@@ -108,39 +108,39 @@ for /l %%i in (1,1,4) do (
 goto :eof
 
 :DownloadAndExtract
-echo ÕýÔÚÏÂÔØ EasyTier ZIP ÎÄ¼þ...
+echo ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ EasyTier ZIP ï¿½Ä¼ï¿½...
 powershell -Command "Invoke-WebRequest -Uri '%EASYTIER_ZIP_URL%' -OutFile '%ZIP_FILE%'" >>"%LOG_FILE%" 2>&1
 if not exist "%ZIP_FILE%" (
-    echo ÏÂÔØÊ§°Ü£¬Çë¼ì²éÍøÂç»ò URL
+    echo ï¿½ï¿½ï¿½ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ URL
     pause
     goto InstallMenu
 )
-echo ÕýÔÚ½âÑ¹µ½ %INSTALL_DIR% ...
+echo ï¿½ï¿½ï¿½Ú½ï¿½Ñ¹ï¿½ï¿½ %INSTALL_DIR% ...
 powershell -Command "Expand-Archive -Path '%ZIP_FILE%' -DestinationPath '%INSTALL_DIR%' -Force" >>"%LOG_FILE%" 2>&1
-echo EasyTier °²×°Íê³É£¡ÏêÏ¸ÈÕÖ¾ÒÑÐ´Èë %LOG_FILE%
+echo EasyTier ï¿½ï¿½×°ï¿½ï¿½É£ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½Ö¾ï¿½ï¿½Ð´ï¿½ï¿½ %LOG_FILE%
 pause
 goto MainMenu
 
 :StartSubMenu
 cls
-echo ========== °²×°ÏµÍ³·þÎñ ==========
+echo ========== ï¿½ï¿½×°ÏµÍ³ï¿½ï¿½ï¿½ï¿½ ==========
 set "START_COUNT=0"
 for /l %%i in (1,1,4) do (
-    if "!PROG%%i_STATUS!"=="Î´×¢²á" (
+    if "!PROG%%i_STATUS!"=="Î´×¢ï¿½ï¿½" (
         set /a START_COUNT+=1
         set "START_OPTION[!START_COUNT!]=PROG%%i"
         echo !START_COUNT!. !PROG%%i_EXE!
     )
 )
 if !START_COUNT! equ 0 (
-    echo ÔÝÎÞÎ´×¢²á·þÎñ¿É°²×°
+    echo ï¿½ï¿½ï¿½ï¿½Î´×¢ï¿½ï¿½ï¿½ï¿½ï¿½É°ï¿½×°
     pause
     goto MainMenu
 )
 set /a BACK_OPT=START_COUNT+1
-echo !BACK_OPT!. ·µ»ØÖ÷²Ëµ¥
+echo !BACK_OPT!. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½
 echo.
-set /p sub_choice=ÇëÑ¡Ôñ·þÎñ£º
+set /p sub_choice=ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½
 if "%sub_choice%"=="!BACK_OPT!" goto MainMenu
 for /l %%i in (1,1,!START_COUNT!) do (
     if "%sub_choice%"=="%%i" (
@@ -156,15 +156,15 @@ set "TARGET_EXE=!%PROG_PREFIX%_EXE!"
 set "TARGET_SERVICE=!%PROG_PREFIX%_SERVICE!"
 set "TARGET_EXE_PATH=%INSTALL_DIR%\%TARGET_EXE%"
 
-if not exist "%TARGET_EXE_PATH%" echo ´íÎó£º%TARGET_EXE%²»´æÔÚ & pause & goto MainMenu
-if not exist "%NSSM_EXE%" echo ´íÎó£ºNSSM²»´æÔÚ & pause & goto MainMenu
+if not exist "%TARGET_EXE_PATH%" echo ï¿½ï¿½ï¿½ï¿½%TARGET_EXE%ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ & pause & goto MainMenu
+if not exist "%NSSM_EXE%" echo ï¿½ï¿½ï¿½ï¿½NSSMï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ & pause & goto MainMenu
 
-set /p EXEC_PARAMS=ÇëÊäÈë¶îÍâ²ÎÊý£¨¿ÉÁô¿Õ£©£º
+set /p EXEC_PARAMS=ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ£ï¿½ï¿½ï¿½
 for /f "tokens=* delims= " %%A in ("!EXEC_PARAMS!") do set "EXEC_PARAMS=%%A"
 
 "%NSSM_EXE%" install "%TARGET_SERVICE%" "%TARGET_EXE_PATH%" >>"%LOG_FILE%" 2>&1
 
-:: ½öµ±ÓÃ»§ÊäÈë²ÎÊýÊ±²Å´«¸ø AppParameters
+:: ï¿½ï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½Å´ï¿½ï¿½ï¿½ AppParameters
 if not "!EXEC_PARAMS!"=="" (
     "%NSSM_EXE%" set "%TARGET_SERVICE%" AppParameters "!EXEC_PARAMS!" >>"%LOG_FILE%" 2>&1
 )
@@ -174,31 +174,31 @@ if not "!EXEC_PARAMS!"=="" (
 "%NSSM_EXE%" set "%TARGET_SERVICE%" AppStderr "%LOGS_DIR%\%TARGET_EXE%-err.log" >>"%LOG_FILE%" 2>&1
 
 sc start "%TARGET_SERVICE%" >>"%LOG_FILE%" 2>&1
-echo ·þÎñ %TARGET_SERVICE% °²×°²¢Æô¶¯Íê³É£¡ÏêÏ¸ÈÕÖ¾ÒÑÐ´Èë %LOG_FILE%
+echo ï¿½ï¿½ï¿½ï¿½ %TARGET_SERVICE% ï¿½ï¿½×°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É£ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½Ö¾ï¿½ï¿½Ð´ï¿½ï¿½ %LOG_FILE%
 pause
 call :UpdateServiceStatus
 goto MainMenu
 
 :StopSubMenu
 cls
-echo ========== É¾³ýÏµÍ³·þÎñ ==========
+echo ========== É¾ï¿½ï¿½ÏµÍ³ï¿½ï¿½ï¿½ï¿½ ==========
 set "STOP_COUNT=0"
 for /l %%i in (1,1,4) do (
-    if not "!PROG%%i_STATUS!"=="Î´×¢²á" (
+    if not "!PROG%%i_STATUS!"=="Î´×¢ï¿½ï¿½" (
         set /a STOP_COUNT+=1
         set "STOP_OPTION[!STOP_COUNT!]=PROG%%i"
         echo !STOP_COUNT!. !PROG%%i_EXE!
     )
 )
 if !STOP_COUNT! equ 0 (
-    echo ÔÝÎÞÒÑ×¢²á·þÎñ¿ÉÉ¾³ý
+    echo ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¢ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½
     pause
     goto MainMenu
 )
 set /a BACK_OPT=STOP_COUNT+1
-echo !BACK_OPT!. ·µ»ØÖ÷²Ëµ¥
+echo !BACK_OPT!. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ëµï¿½
 echo.
-set /p sub_choice=ÇëÑ¡Ôñ·þÎñ£º
+set /p sub_choice=ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½
 if "%sub_choice%"=="!BACK_OPT!" goto MainMenu
 for /l %%i in (1,1,!STOP_COUNT!) do (
     if "%sub_choice%"=="%%i" (
@@ -212,22 +212,22 @@ goto StopSubMenu
 set "PROG_PREFIX=%~1"
 set "TARGET_SERVICE=!%PROG_PREFIX%_SERVICE!"
 
-:: Í£Ö¹²¢É¾³ý·þÎñ
+:: Í£Ö¹ï¿½ï¿½É¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 sc stop "%TARGET_SERVICE%" >>"%LOG_FILE%" 2>&1
 "%NSSM_EXE%" remove "%TARGET_SERVICE%" confirm >>"%LOG_FILE%" 2>&1
 
-echo ·þÎñ %TARGET_SERVICE% É¾³ýÍê³É£¡ÏêÏ¸ÈÕÖ¾ÒÑÐ´Èë %LOG_FILE%
+echo ï¿½ï¿½ï¿½ï¿½ %TARGET_SERVICE% É¾ï¿½ï¿½ï¿½ï¿½É£ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½Ö¾ï¿½ï¿½Ð´ï¿½ï¿½ %LOG_FILE%
 pause
 call :UpdateServiceStatus
 goto MainMenu
 
 :UninstallEasyTier
 cls
-echo ÕýÔÚÐ¶ÔØ EasyTier£¬Í£Ö¹ËùÓÐ·þÎñ...
+echo ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½ï¿½ EasyTierï¿½ï¿½Í£Ö¹ï¿½ï¿½ï¿½Ð·ï¿½ï¿½ï¿½...
 
 for /l %%i in (1,1,4) do (
     set "TARGET_SERVICE=!PROG%%i_SERVICE!"
-    echo ÕýÔÚÍ£Ö¹·þÎñ !TARGET_SERVICE! ...
+    echo ï¿½ï¿½ï¿½ï¿½Í£Ö¹ï¿½ï¿½ï¿½ï¿½ !TARGET_SERVICE! ...
     sc stop "!TARGET_SERVICE!" >>"%LOG_FILE%" 2>&1
     "%NSSM_EXE%" remove "!TARGET_SERVICE!" confirm >>"%LOG_FILE%" 2>&1
 )
@@ -239,7 +239,7 @@ if exist "%NSSM_EXE%" (
 )
 
 rmdir /s /q "%INSTALL_DIR%"
-echo EasyTier ÒÑÐ¶ÔØÍê³É£¡
+echo EasyTier ï¿½ï¿½Ð¶ï¿½ï¿½ï¿½ï¿½É£ï¿½
 pause
 exit
 
